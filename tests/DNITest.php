@@ -1,13 +1,13 @@
 <?php
 
 use PHPUnit\Framework\TestCase;
-use App\DNI; 
+use \App\DNI; 
 
 class DNITest extends TestCase
 {
     public function testVerDNI(){
-        $dni = new DNI();
+        $dni = new DNI('12345678');
         $resultado = $dni->getDNIConLetra();
-        $this->assertContainsNotOnlyInt($resultado);
+        $this->assertIsNotInt($resultado);
     }
 }
